@@ -13,7 +13,7 @@
         </div>
       </div>
     </section>
-    
+
 
     <section class="ftco-section ftco-pricing">
 			<div class="container">
@@ -25,6 +25,11 @@
           </div>
         </div>
         <div class="row">
+			@if (session('added'))
+			<div class="alert alert-success">{{session('added')}}</div>
+			@endif
+
+
 
         @foreach ($products as $p)
         	<div class="col-md-3 ftco-animate">
@@ -34,7 +39,7 @@
                 <p>{{$p->product_description}}</p>
                 <p>Supplier: {{$p->supplier}}</p>
                 <p><span class="price">{{$p->product_price}}</span> <span class="per">/ PKR</span></p>
-        			<p class="button text-center"><a href="#" class="btn btn-primary px-4 py-3">Add To Cart</a></p>
+        			<p class="button text-center"><a href="{{url('/addtocart', $p->id)}}" class="btn btn-primary px-4 py-3">Add To Cart</a></p>
         		</div>
         	</div>
             @endforeach

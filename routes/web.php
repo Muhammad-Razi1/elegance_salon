@@ -23,6 +23,9 @@ Route::get('/contact', [WebsiteController::class, 'webContact']);
 Route::get('/booknow', [WebsiteController::class, 'webBooknow']);
 Route::post('/book', [WebsiteController::class, 'bookCustomer']);
 Route::get('/shop', [WebsiteController::class, 'webShop']);
+Route::get('/addtocart/{id}', [WebsiteController::class, 'addToCart']);
+Route::get('/shoppingcart', [WebsiteController::class, 'Cart']);
+Route::delete('/deleteproduct', [WebsiteController::class, 'deleteProduct']);
 
 
 Route::post('/feedback', [FeedbackController::class, 'feedbackView']);

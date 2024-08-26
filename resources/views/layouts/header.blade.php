@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed:500,600,700&display=swap" rel="stylesheet">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -28,6 +29,9 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="
+https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
+"></script>
 
   </head>
   <body>
@@ -44,6 +48,11 @@
 	        	<li class="nav-item {{Request::is('services') ? 'active' : ''}}"><a href="/services" class="nav-link">Services</a></li>
             <li class="nav-item {{Request::is('shop') ? 'active' : ''}}"><a href="/shop" class="nav-link">Shop</a></li>
               <li class="nav-item {{Request::is('booknow') ? 'active' : ''}}"><a href="/booknow" class="nav-link">Book Now</a></li>
+              <li class="nav-item">
+              <a href="{{url('shoppingcart')}}" class="nav-link">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart <span class="badge bg-danger">{{count((array) session('cart'))}}</span>
+              </a>
+              </li>
               @if (Route::has('login'))
                     @auth
                     <form method="POST" action="{{ route('logout') }}" x-data>

@@ -25,13 +25,13 @@
 </script>
 @endif
 
-              <h2 class="ftco-heading-2">Feedback</h2>
+              <h2 class="ftco-heading-2">Have a Question</h2>
               <ul class="list-unstyled">
                 <form action="/feedback" method="post">
                   @csrf
-                <input type="text" placeholder="Enter name" class="form-control" name="name">
-                <input type="email" placeholder="Enter email" class="form-control mt-1" name="email">
-                <textarea class="form-control mt-1" name="message" placeholder="Enter Message" rows="3" cols="30" id=""></textarea>
+                <input type="text" placeholder="Enter name" class="form-control" required name="name">
+                <input type="email" placeholder="Enter email" class="form-control mt-1" required name="email">
+                <textarea class="form-control mt-1" name="message" placeholder="Enter Message" required rows="3" cols="30" id=""></textarea>
                 <button type="submit" class="btn-btn-outline-primary">Submit</button>
                 </form>
               </ul>
@@ -50,7 +50,7 @@
           </div>
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions</h2>
+            	<h2 class="ftco-heading-2">Contact Us</h2>
             	<div class="block-23 mb-3">
 	              <ul>
 	                <li><span class="icon icon-map-marker"></span><span class="text">125/U, P.E.C.H.S, Karachi, 75400</span></li>
